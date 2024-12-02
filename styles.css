@@ -1,194 +1,233 @@
 * {
-  padding: 0;
+  padding:0;
   margin: 0;
-  outline: none;
   border: none;
+  outline: none;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: rgba(9, 9, 17, 0.4);
+  background-image: url(back.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(back.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
-.container {
-  background-color: rgba(9, 9, 17, 0.7);
-  width: 40%;
+#container {
+  background-color: rgba(6, 5, 17, 0.4);
   padding: 50px;
+  box-shadow: inset 0 -30px 10px black;
   border-radius: 10px;
-  box-shadow: inset 0 -20px 10px rgb(0, 0, 0);
+
+  animation:1.2s reloadAnimation ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
 }
 
-
-.display {
+.display p {
+  text-transform: uppercase;
   font-size: 2rem;
   color: white;
   padding: 0 0 20px;
   text-shadow: 0 0 10px white;
-  letter-spacing: 2px;
-  
 }
+
 .drum-pad-cont {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 10rem 10rem 10rem;
   gap: 10px;
 }
 
+/* Drum Pads */
+
 .drum-pad {
   height: 10rem;
+  font-size: 1rem;
   text-transform: uppercase;
-  border-radius: 5px;
-  backdrop-filter: blur(20px);
-  background-color: #fff;
-  color: rgb(185, 185, 185);
   font-weight: 600;
-  box-shadow: inset 0 -4px 5px rgb(190, 190, 190);
+  color: rgb(196, 196, 196);
+  background-color: white;
+  box-shadow: inset 0 -4px 3px rgb(177, 177, 177);
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .d1:active {
-  color: rgb(17, 247, 255);
-  box-shadow: 0 0 50px rgb(17, 247, 255);
-  background-color: rgb(200, 247, 255);
-}
+  box-shadow: 0 0 50px cyan;
+  color: cyan;
+  background-color: rgb(203, 255, 255);
+ }
+ .d2:active {
+  box-shadow: 0 0 50px #00ff88;
+  color: #00ff88;
+  background-color: #cdffe8;
+ }
+ .d3:active {
+  box-shadow: 0 0 50px #cc00ff;
+  color: #cc00ff;
+  background-color: #f5cfff;
+ }
+ .d4:active {
+  box-shadow: 0 0 50px #eeff00;
+  color: #eeff00;
+  background-color: #fcffcf;
+ }
+ .d5:active {
+  box-shadow: 0 0 50px #ff0000;
+  color: #ff0000;
+  background-color: #ffd0d0;
+ }
+ .d6:active {
+  box-shadow: 0 0 50px #2600ff;
+  color: #2600ff;
+  background-color: #dbd4ff;
+ }
+ .d7:active {
+  box-shadow: 0 0 50px #ff00aa;
+  color: #ff00aa;
+  background-color: #ffd4f1;
+ }
+ .d8:active {
+  box-shadow: 0 0 50px #66ff00;
+  color: #66ff00;
+  background-color: #e3ffd0;
+ }
+ .d9:active {
+  box-shadow: 0 0 50px #ff3c00;
+  color: #ff3c00;
+  background-color: #ffdcd1;
+ }
+ .d10:active {
+  box-shadow: 0 0 50px #00c3ff;
+  color: #00c3ff;
+  background-color: #d1f4ff;
+ }
+ .d11:active {
+  box-shadow: 0 0 50px #00ffaa;
+  color: #00ffaa;
+  background-color: #d9fff2;
+ }
+ .d12:active {
+  box-shadow: 0 0 50px #ffbb00;
+  color: #ffbb00;
+  background-color: #fff1cb;
+ }
 
-.d2:active {
-  color: rgb(17, 255, 57);
-  box-shadow: 0 0 50px rgb(17, 255, 57);
-  background-color: rgb(231, 248, 187);
-}
-
-.d3:active {
-  color: rgb(255, 17, 136);
-  box-shadow: 0 0 50px rgb(255, 17, 136);
-  background-color: rgb(255, 188, 222);
-}
-
-.d4:active {
-  color: r#1b50ff;
-  box-shadow: 0 0 50px #1b50ff;
-  background-color: hwb(226 71% 0%);
-}
-
-
-.copyright {
+ .copyright {
   font-size: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 5px;
-  margin-top: 50px;
+  color: rgb(202, 202, 202);
+  text-transform: uppercase;
   text-align: center;
-  color: rgba(255, 255, 255, 0.486);
-}
+  padding-top: 50px;
+ }
 
-@media (max-width: 428px) {
+ @keyframes reloadAnimation {
+  from {
+    transform: scale(0);
+  }
 
-  .container {
-    width: 100%;
-    padding:20px 20px;
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+ }
+
+ /* Mobile */
+
+ @media (max-width: 428px) {
+
+  #container {
+    padding: 50px 20px;
+    box-shadow: inset 0 -20px 10px black;
     border-radius: 5px;
+    width: 100%;
   }
   
-  
-  .display {
-    font-size: 1.2rem;
-    padding: 0 0 10px;
-    letter-spacing: 1px;
-    
+  .display p {
+    font-size: 1.5rem;
   }
+  
   .drum-pad-cont {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
   }
+  
+  /* Drum Pads */
   
   .drum-pad {
     height: 6.5rem;
   }
+
   .copyright {
     font-size: 0.5rem;
-    text-transform: uppercase;
     letter-spacing: 5px;
-    margin-top: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.486);
-  }
-  
-}
+    padding-top: 20px;
+   }
+ }
 
-@media (min-width: 429px) and (max-width: 1279px) {
+ /* Tab */
 
-  .container {
-    width: 100%;
-    padding:20px 30px;
+ @media (min-width: 429px) and (max-width: 1279px) {
+
+  #container {
+    padding: 50px;
+    box-shadow: inset 0 -20px 10px black;
     border-radius: 5px;
+    width: 100%;
   }
   
-  
-  .display {
+  .display p {
     font-size: 2rem;
-    padding: 0 0 10px;
-    letter-spacing: 1px;
-    
   }
+  
   .drum-pad-cont {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
   }
+  
+  /* Drum Pads */
   
   .drum-pad {
     height: 12rem;
   }
+
   .copyright {
-    font-size: 0.5rem;
-    text-transform: uppercase;
+    font-size: 0.7rem;
     letter-spacing: 5px;
-    margin-top: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.486);
-  }
-  
-}
+    padding-top: 20px;
+   }
+ }
 
-@media (min-width: 1280px) and (max-width: 1919px) {
+ /* Laptops */
 
-  .container {
+ @media (min-width: 1280px) and (max-width: 1919px) {
+
+  #container {
+    padding: 50px;
     width: 30%;
-    padding:50px;
-    border-radius: 5px;
   }
   
-  
-  .display {
+  .display p {
     font-size: 2rem;
-    padding: 0 0 10px;
-    letter-spacing: 1px;
-    
   }
+  
   .drum-pad-cont {
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
   }
+  
+  /* Drum Pads */
   
   .drum-pad {
     height: 7rem;
   }
+
   .copyright {
-    font-size: 0.5rem;
-    text-transform: uppercase;
+    font-size: 0.7rem;
     letter-spacing: 5px;
-    margin-top: 20px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.486);
-  }
-  
-}
+    padding-top: 20px;
+   }
+ }
