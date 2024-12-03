@@ -62,14 +62,14 @@ function playAudio(makeSound) {
 
     case "hihat-c":
     case "a":
-      var audio = new Audio("sounds/hihat-c.wav");
+      var audio = new Audio("sounds/hihat-1.wav");
       audio.play();
       document.querySelector(".display p").innerHTML = makeSound;
       break;
 
     case "hihat-o":
     case "q":
-      var audio = new Audio("sounds/hihat-o.wav");
+      var audio = new Audio("sounds/hihat-2.wav");
       audio.play();
       document.querySelector(".display p").innerHTML = makeSound;
       break;
